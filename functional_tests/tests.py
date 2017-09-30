@@ -84,7 +84,8 @@ class NewVisitorTest(LiveServerTestCase):
 
         # She notices that her list has a unique URL
         edith_list_url = self.browser.current_url
-        self.assertRegex(edith_list_url, '/lists/.+')
+        ## Have to use deprecated assertRegexpMatches to work with xvfb
+        self.assertRegexpMatches(edith_list_url, '/lists/.+')
 
         # Now a new user, Francis, comes along to the site.
 
