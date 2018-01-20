@@ -2,7 +2,7 @@ import sys
 import uuid
 
 from django.contrib.auth import authenticate
-from django.contrib.auth import login as auth_login logout as auth_logout
+from django.contrib.auth import login as auth_login, logout as auth_logout
 from django.core.mail import send_mail
 from django.shortcuts import redirect, render
 
@@ -22,7 +22,7 @@ def send_login_email(request):
         'noreply@superlists',
         [email,],
     )
-            return render(request, 'login_email_sent.html')
+    return render(request, 'login_email_sent.html')
 
 
 def login(request):
