@@ -32,12 +32,18 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'lists',
-    'django.contrib.admin',
+    'accounts',
+    #'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
+
+AUTH_USER_MODEL = 'account.ListUser'
+AUTHENTICATION_BACKENDS = [
+    'accounts.authentication.PasswordlessAuthenticationBackend',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +126,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../static'))
+
+# Email setting
+EMAIL_HOST = 'smtpdm.aliyun.com'
+EMAIL_HOST_USER = 'tsing_w@aliyun.com'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+EMAIL_PORT = 25
+EMAIL_USE_TLS = True
