@@ -17,7 +17,7 @@ class PasswordlessAuthenticationBackend(object):
             print('got user', file=sys.stderr)
             return user
         except ListUser.DoesNotExist:
-            print('new user', file=stderr)
+            print('new user', file=sys.stderr)
             return ListUser.objects.create(email=token.email)
 
     def get_user(self, email):

@@ -128,8 +128,9 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../static'))
 
 # Email setting
-EMAIL_HOST = 'smtpdm.aliyun.com'
-EMAIL_HOST_USER = 'tsing_w@aliyun.com'
+EMAIL_HOST = 'smtp.163.com'
+EMAIL_HOST_USER = 'tsing_w@163.com'
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 EMAIL_PORT = 25
 EMAIL_USE_TLS = True
+# DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
