@@ -5,7 +5,7 @@ from django.contrib.auth import models as auth_models
 from django.db import models
 
 
-auth.signals.user_logged_in.disconnect(auth.models.update_last_login)
+auth.signals.user_logged_in.disconnect(auth_models.update_last_login)
 
 
 class User(models.Model):
